@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://explorer.world-wonders-api.org/sitemap.xml

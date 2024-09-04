@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* INTER FONT */
+@font-face {
+    font-family: "Inter";
+    font-display: swap;
+    src: url("../public/fonts/Inter-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    font-display: swap;
+    src: url("../public/fonts/Inter-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    font-display: swap;
+    src: url("../public/fonts/Inter-Italic.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* ANIMATIONS */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.fade-fast {
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* MISC */
+/* hide decrement+increment buttons for number inputs */
+@layer base {
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"] {
+        -webkit-appearance: none;
+        margin: 0;
+        appearance: none;
+        -moz-appearance: textfield !important;
+    }
+}
+
+/* DOUBLE_SLIDER */
+.double-slider {
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        pointer-events: all;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        appearance: none;
+        -webkit-appearance: none;
+        pointer-events: all;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    input[type="range"] {
+        appearance: none;
+        -webkit-appearance: none;
+        pointer-events: none;
+    }
+
+    /* Colour in the track between the two slider thumbs, using CSS variables passed from the `style` prop of the element */
+    .dark #slider-upper {
+        --clr-track: theme("colors.gray.700");
+        --clr-track-highlight: theme("colors.amber.700");
+    }
+    #slider-upper {
+        --clr-track: theme("colors.gray.400");
+        --clr-track-highlight: theme("colors.amber.600");
+
+        background: linear-gradient(
+            to right,
+            var(--clr-track) 0%,
+            var(--clr-track) var(--percent_lower),
+            var(--clr-track-highlight) var(--percent_lower),
+            var(--clr-track-highlight) var(--percent_upper),
+            var(--clr-track) var(--percent_upper),
+            var(--clr-track) 100%
+        );
+    }
+}
