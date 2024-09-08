@@ -41,7 +41,7 @@ pub fn Wonder<'a>(#[prop()] wonder: &'a Wonder) -> impl IntoView {
     }
 
     view! {
-        <li class="flex flex-col gap-5 pb-5 rounded-xl border border-gray-200 shadow duration-300 dark:border-gray-700 bg-gray-100/50 lg:motion-safe:hover:bg-white/60 lg:motion-safe:group-hover/list:opacity-50 lg:hover:!opacity-100 lg:dark:motion-safe:hover:bg-zinc-900/50 lg:motion-safe:hover:shadow[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:motion-safe:hover:drop-shadow-lg dark:bg-zinc-900/30">
+        <li class="flex overflow-hidden flex-col gap-5 pb-5 rounded-xl border border-gray-200 shadow duration-300 dark:border-gray-700 bg-gray-100/50 lg:motion-safe:hover:bg-white/60 lg:motion-safe:group-hover/list:opacity-50 lg:hover:!opacity-100 lg:dark:motion-safe:hover:bg-zinc-900/50 lg:motion-safe:hover:shadow[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:motion-safe:hover:drop-shadow-lg dark:bg-zinc-900/30">
             <div class="flex overflow-hidden justify-center w-full bg-gray-200 rounded-t-lg shadow-lg dark:bg-gray-900 dark:shadow-gray-800">
                 <Carousel wonder=wonder />
             </div>
