@@ -6,7 +6,12 @@ use std::{
 use html::Div;
 use leptos::*;
 use leptos_icons::Icon;
-use leptos_use::use_element_hover;
+use leptos_use::{
+    breakpoints_tailwind,
+    use_breakpoints,
+    use_element_hover,
+    BreakpointsTailwind,
+};
 
 use crate::data::Wonder;
 
@@ -78,7 +83,10 @@ impl CarouselState {
 pub fn Carousel<'a>(#[prop()] wonder: &'a Wonder) -> impl IntoView {
     let images = store_value(wonder.links.images.clone());
     let carousel_ref: NodeRef<Div> = create_node_ref();
+
     let is_hovered = use_element_hover(carousel_ref);
+    let screen_width = use_breakpoints(breakpoints_tailwind());
+    let is_small_screen = screen_width.le(BreakpointsTailwind::Md);
 
     let (state, set_state) = create_signal(CarouselState {
         max: wonder.links.images.len(),
@@ -125,7 +133,7 @@ pub fn Carousel<'a>(#[prop()] wonder: &'a Wonder) -> impl IntoView {
             </ul>
 
             <div class=move || {
-                if is_hovered() {
+                if is_small_screen() || is_hovered() {
                     "transition-opacity duration-300 opacity-100"
                 } else {
                     "transition-opacity duration-300 opacity-0"
