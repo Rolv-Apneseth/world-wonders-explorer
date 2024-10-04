@@ -34,7 +34,7 @@ pub fn Control(
     macro_rules! search_input {
         ($field: ident, $label: expr) => {
             view!{
-            <div class="overflow-hidden relative rounded-xl shrink" title=$label>
+            <div class="overflow-hidden relative rounded-xl shrink max-w-40" title=$label>
                 <input
                     id=$label
                     type="text"
@@ -46,7 +46,7 @@ pub fn Control(
                             p.$field = if val.is_empty() { None } else { Some(val) };
                         })
                     }
-                    class="block px-2.5 pt-5 pb-2.5 text-sm bg-transparent rounded-xl border border-gray-300 appearance-none outline-none dark:border-gray-600 focus:border-amber-500 peer max-w-40 dark:focus:border-amber-600"
+                    class="block px-2.5 pt-5 pb-2.5 text-sm bg-transparent rounded-xl border border-gray-300 appearance-none outline-none dark:border-gray-600 focus:border-amber-500 peer max-w-full dark:focus:border-amber-600"
                 />
 
                 <label
@@ -80,10 +80,10 @@ pub fn Control(
                             view! { <Icon icon=icondata::BiFilterAltSolid /> }
                         }
                     >
-                        <fieldset class="flex flex-col gap-5 items-center">
+                        <fieldset class="flex flex-col gap-5 items-center min-w-0 max-w-full">
                             <legend class="sr-only">Filter</legend>
 
-                            <section class="flex flex-col gap-5">
+                            <section class="flex flex-col gap-5 max-w-full">
                                 <section class="flex flex-nowrap gap-2">
                                     {search_input!(name, "Name")}
                                     {search_input!(location, "Location")}

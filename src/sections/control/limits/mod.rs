@@ -42,7 +42,7 @@ pub fn Limits(
     });
 
     view! {
-        <section class="flex flex-col items-center w-80">
+        <section class="flex flex-col items-center w-80 max-w-full">
             <TimePeriodCombo lower=lower upper=upper />
             <DoubleSlider
                 lower=lower
