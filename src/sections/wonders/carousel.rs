@@ -145,7 +145,7 @@ pub fn Carousel<'a>(#[prop()] wonder: &'a Wonder) -> impl IntoView {
                     on:click=move |_| { set_state.update(|s| s.prev()) }
                     class="flex absolute top-0 z-30 justify-center items-center px-1 h-full cursor-pointer outline-none disabled:hidden start-0 group motion-safe:transition-colors dark:hover:bg-gray-900/60 dark:hover:bg-gray-900/80 hover:bg-gray-900/60"
                 >
-                    <span class="text-gray-700 dark:text-gray-300 group-hover:text-gray-300 motion-safe:transition-colors dark:group-hover:text-gray-200">
+                    <span class="text-gray-800 dark:text-gray-300 group-hover:text-gray-300 motion-safe:transition-colors dark:group-hover:text-gray-200">
                         <Icon class="text-2xl drop-shadow-md" icon=icondata::BiChevronLeftSolid />
                         <span class="sr-only">Previous</span>
                     </span>
@@ -156,7 +156,7 @@ pub fn Carousel<'a>(#[prop()] wonder: &'a Wonder) -> impl IntoView {
                     on:click=move |_| { set_state.update(|s| s.next()) }
                     class="flex absolute top-0 z-30 justify-center items-center px-1 h-full cursor-pointer outline-none disabled:hidden end-0 group motion-safe:transition-colors dark:hover:bg-gray-950/60 dark:hover:bg-gray-900/80 hover:bg-gray-900/60"
                 >
-                    <span class="text-gray-700 dark:text-gray-300 group-hover:text-gray-300 motion-safe:transition-colors dark:group-hover:text-gray-200">
+                    <span class="text-gray-800 dark:text-gray-300 group-hover:text-gray-300 motion-safe:transition-colors dark:group-hover:text-gray-200">
                         <Icon class="text-2xl drop-shadow-lg" icon=icondata::BiChevronRightSolid />
                         <span class="sr-only">Next</span>
                     </span>
